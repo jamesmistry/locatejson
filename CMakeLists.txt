@@ -1,0 +1,28 @@
+cmake_minimum_required (VERSION 2.6)
+project (locatejson)
+set (app_VERSION_MAJOR 0)
+set (app_VERSION_MINOR 1)
+
+if (NOT CMAKE_BUILD_TYPE)
+        message(STATUS "Build type not specified - defaulting to Release")
+        set(CMAKE_BUILD_TYPE Release)
+endif()
+
+set (EXECUTABLE_OUTPUT_PATH "${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE}/bin")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE}/lib")
+list(APPEND CMAKE_CXX_FLAGS "-std=c++11" ${CMAKE_CXX_FLAGS})
+
+set(CPACK_PACKAGE_VERSION ${VERSION})
+set(CPACK_PACKAGE_NAME "locatejson")
+set(CPACK_PACKAGE_RELEASE 1)
+set(CPACK_PACKAGE_VERSION "${app_VERSION_MAJOR}.${app_VERSION_MINOR}")
+set(CPACK_PACKAGE_CONTACT "James Mistry")
+set(CPACK_PACKAGE_VENDOR "James Mistry")
+set(CPACK_PACKAGING_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
+set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${CPACK_PACKAGE_RELEASE}.${CMAKE_SYSTEM_PROCESSOR}")
+include(CPack)
+
+enable_testing()
+
+add_subdirectory ("${CMAKE_CURRENT_SOURCE_DIR}/src")
+add_subdirectory ("${CMAKE_CURRENT_SOURCE_DIR}/test")

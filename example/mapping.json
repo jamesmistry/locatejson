@@ -1,0 +1,29 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "path_analyzer": {
+          "tokenizer": "path_hierarchy"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "fileindex": {
+      "properties": {
+	"host": { "type": "string" }
+        "entries": {
+          "type": "nested", 
+          "properties": {
+            "path": {
+              "type": "string",
+              "analyzer": "path_analyzer"
+            },
+	    "file": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}
+

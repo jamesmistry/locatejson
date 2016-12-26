@@ -9,3 +9,5 @@ install_manifest.txt
 .cproject
 *_testexe
 .settings
+appConfig.h
+Testing

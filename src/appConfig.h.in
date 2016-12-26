@@ -1,0 +1,7 @@
+#ifndef APP_CONFIG_H
+#define APP_CONFIG_H
+
+#define APP_VERSION_MAJOR @app_VERSION_MAJOR@
+#define APP_VERSION_MINOR @app_VERSION_MINOR@
+
+#endif
