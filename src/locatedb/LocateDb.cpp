@@ -1,5 +1,5 @@
 #include <string>
-#include <stdint.h>
+#include <cstdint>
 #include <stddef.h>
 #include <limits.h>
 

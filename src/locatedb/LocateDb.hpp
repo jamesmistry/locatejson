@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <stdint.h>
+#include <cstdint>
 #include <stddef.h>
 #include <cstring>
 #include <limits.h>
@@ -44,7 +44,7 @@ namespace locj
 		 *
 		 * @param[in]	filename	Filename of the mlocate database to read
 		 */
-		LocateDb(std::string filename);
+		explicit LocateDb(std::string filename);
 
 		/*!
 		 * Load the file entry records in the database file, each representing a file or sub-directory.
@@ -113,8 +113,8 @@ namespace locj
 			}
 
 			// Read the config block size
-			uint32_t configBlockSize = Order::big32(reinterpret_cast<unsigned char *>(&(hdr[8])));
-			if ((configBlockSize & static_cast<uint32_t>(0x80000000ul)) != 0)
+			std::uint32_t configBlockSize = Order::big32(reinterpret_cast<unsigned char *>(&(hdr[8])));
+			if ((configBlockSize & static_cast<std::uint32_t>(0x80000000ul)) != 0)
 			{
 				throw InvalidConfigBlockSize();
 			}
