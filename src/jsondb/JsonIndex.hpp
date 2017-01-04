@@ -2,7 +2,7 @@
 #define JSONINDEX_HPP_
 
 #include <fstream>
-#include <stdint.h>
+#include <cstdint>
 
 namespace locj
 {
@@ -22,7 +22,9 @@ namespace locj
 		 * @param[in]	filename	Name of the file to write the JSON to
 		 * @param[in]	hostname	Contents of the index hostname field in the written data
 		 */
-		JsonIndex(std::ostream & out, std::string hostname);
+		explicit JsonIndex(std::ostream & out, std::string hostname);
+		JsonIndex(const JsonIndex & rhs) = delete;
+		JsonIndex(const JsonIndex && rhs) = delete;
 
 		~JsonIndex();
 
@@ -33,6 +35,9 @@ namespace locj
 		 * @param[in]	filename	Name of the file that is the subject of the entry
 		 */
 		void entry(bool file, const std::string & path, const std::string & name);
+
+		JsonIndex & operator=(const JsonIndex & rhs) = delete;
+		JsonIndex & operator=(const JsonIndex && rhs) = delete;
 
 	private:
 		/*!
@@ -48,7 +53,7 @@ namespace locj
 		void indexFooter();
 
 		std::string m_hostname; //!< Hostname field contents
-		uint64_t m_numEntries; //!< Number of entries in the index
+		std::uint64_t m_numEntries; //!< Number of entries in the index
 		std::ostream & m_output; //!< Output stream
 
 	};
