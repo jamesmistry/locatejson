@@ -13,7 +13,7 @@ namespace locj
 	 * directly in JSON data. The string literal representation contains
 	 * the source data with leading and trailing double quotes along with
 	 * appropriately escaped characters according to standards (see
-	 * http://www.json.org/).
+	 * https://tools.ietf.org/html/rfc7159).
 	 */
 	class JsonStringLiteral
 	{
@@ -34,7 +34,7 @@ namespace locj
 		explicit JsonStringLiteral(const char * data);
 
 		JsonStringLiteral(const JsonStringLiteral & rhs) = default;
-		JsonStringLiteral(const JsonStringLiteral && rhs);
+		JsonStringLiteral(JsonStringLiteral && rhs);
 
 		JsonStringLiteral & operator=(JsonStringLiteral & rhs) = default;
 		JsonStringLiteral & operator=(JsonStringLiteral && rhs);

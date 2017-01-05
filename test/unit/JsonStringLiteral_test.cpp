@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <string>
+#include <iomanip>
 
 #include "jsondb/JsonStringLiteral.hpp"
 
@@ -25,5 +26,30 @@ namespace locj
 		std::string result(subject);
 
 		EXPECT_EQ("\"x\\\"\\\\\\/\\b\\t\\n\\f\\rabc\\u001F\"", result);
+	}
+
+	TEST(JsonStringLiteral, move_ctor)
+	{
+		std::string data("test data");
+
+		JsonStringLiteral src(data.c_str());
+		JsonStringLiteral dest(std::move(src));
+		std::string result(dest);
+
+		EXPECT_EQ(result, "\"test data\"");
+		EXPECT_EQ(std::string(src), "");
+	}
+
+	TEST(JsonStringLiteral, move_ass)
+	{
+		std::string data("test data");
+
+		JsonStringLiteral src(data.c_str());
+		JsonStringLiteral dest("original");
+		dest = std::move(src);
+		std::string result(dest);
+
+		EXPECT_EQ(result, "\"test data\"");
+		EXPECT_EQ(std::string(src), "");
 	}
 }

@@ -21,13 +21,17 @@ namespace locj
 		literalise(strData, m_result);
 	}
 
-	JsonStringLiteral::JsonStringLiteral(const JsonStringLiteral && rhs) : m_result(std::move(rhs.m_result))
+	JsonStringLiteral::JsonStringLiteral(JsonStringLiteral && rhs) : m_result(std::move(rhs.m_result))
 	{
 	}
 
 	JsonStringLiteral & JsonStringLiteral::operator=(JsonStringLiteral && rhs)
 	{
-		m_result = std::move(rhs.m_result);
+		if (this != &rhs)
+		{
+			m_result = std::move(rhs.m_result);
+			rhs.m_result.clear();
+		}
 
 		return (*this);
 	}
