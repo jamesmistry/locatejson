@@ -1,13 +1,13 @@
 #!/bin/bash
 
-valgrind --error-exitcode=101 --tool=memcheck --leak-check=yes --show-leak-kinds=all --track-origins=yes $1
+valgrind --error-exitcode=101 --tool=memcheck --leak-check=yes --show-leak-kinds=definite,possible --track-origins=yes "$@"
 
 results=$?
 
 if (($results == 101)) ; then
-  echo "Test failed due to dynamic analysis errors"
-elif (($results != 0)) ; then
-  echo "Test failed because application returned non-zero exit code"
+  echo "Dynamic analysis FAILED"
+else
+  echo "Dynamic analysis PASSED"
 fi
 
 exit $results
