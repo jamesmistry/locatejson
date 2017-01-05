@@ -186,14 +186,14 @@ namespace locj
 		});
 
 		EXPECT_EQ(8, results.size());
-		EXPECT_EQ("dir:/r/dir1/sub1", results[0]);
-		EXPECT_EQ("dir:/r/dir1/sub2", results[1]);
-		EXPECT_EQ("file:/r/dir1/file1", results[2]);
-		EXPECT_EQ("file:/r/dir1/file2", results[3]);
-		EXPECT_EQ("file:/r/dir2/sfile1", results[4]);
-		EXPECT_EQ("dir:/r/dir2/ssub1", results[5]);
-		EXPECT_EQ("file:/r/dir2/sfile2", results[6]);
-		EXPECT_EQ("dir:/r/dir2/ssub2", results[7]);
+		EXPECT_EQ("dir:dir1/sub1", results[0]);
+		EXPECT_EQ("dir:dir1/sub2", results[1]);
+		EXPECT_EQ("file:dir1/file1", results[2]);
+		EXPECT_EQ("file:dir1/file2", results[3]);
+		EXPECT_EQ("file:dir2/sfile1", results[4]);
+		EXPECT_EQ("dir:dir2/ssub1", results[5]);
+		EXPECT_EQ("file:dir2/sfile2", results[6]);
+		EXPECT_EQ("dir:dir2/ssub2", results[7]);
 	}
 
 }
