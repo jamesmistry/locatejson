@@ -172,19 +172,9 @@ namespace locj
 				// Skip the header
 				m_dbFile.seekg(m_MLOCATE_DIR_HDR_SIZE, std::ios::cur);
 
-				/*
-				 * Read the variable part of the header (directory name). Guarantee this is
-				 * presented to the client in a standard form without a trailing path separator.
-				 */
+				// Read the variable part of the header (directory name).
 				std::string currentDirPathName;
 				dbStr(currentDirPathName);
-				if (currentDirPathName.size() > 0)
-				{
-					if (currentDirPathName[currentDirPathName.size() - 1] == '/')
-					{
-						currentDirPathName.pop_back();
-					}
-				}
 
 				// Read the current directory's file entries
 				bool noMoreEntries = false;
@@ -229,7 +219,7 @@ namespace locj
 						std::string objectName;
 						dbStr(objectName);
 
-						recordCallback(fileType, m_dbRoot + currentDirPathName, objectName);
+						recordCallback(fileType, currentDirPathName, objectName);
 					}
 				}
 			}
