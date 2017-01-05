@@ -127,7 +127,7 @@ namespace locj
 	class OversizeDbString : public InvalidUpdateDb
 	{
 	public:
-		OversizeDbString() : InvalidUpdateDb("String object exceeds maximum permitted size")
+		OversizeDbString() : InvalidUpdateDb("Database string object exceeds maximum permitted size")
 		{
 		}
 
