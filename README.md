@@ -2,11 +2,15 @@
 
 ## Overview
 
-locateJson doesn't use much memory - the mlocate database and resulting JSON aren't buffered, so their size doesn't affect locateJson's memory usage. For example, a test mlocate database of approximately 10 MiB in size that resulted in a JSON file of over 43 MiB in size was processed with a peak memory usage of less than 90 KiB.
+locateJson: a tool for converting mlocate databases to JSON.
 
-`man mlocate.db` for more details.
+mlocate databases contain an index of files and directories for efficient lookup. `man locate` and `man mlocate.db` for more details.
 
-## Building
+locateJson doesn't use much memory - the mlocate database and resulting JSON aren't buffered, so locateJson's memory usage is independent of how big they are.
+
+You may find locateJson useful for creating distributed `locate` functionality using a search engine like Elasticsearch - see the `examples/` directory for a basic guide.
+
+## Building & Testing
 
 ### What you need
 
@@ -27,7 +31,7 @@ locateJson doesn't use much memory - the mlocate database and resulting JSON are
 
 ### Synopsis
 
-./build/Debug/bin/locatejson [-n <string>] [-o <filename>] [-i <filename>] [--] [--version] [-h]
+locatejson [-n <string>] [-o <filename>] [-i <filename>] [--] [--version] [-h]
 
 ### Options
 
@@ -42,6 +46,9 @@ locateJson doesn't use much memory - the mlocate database and resulting JSON are
 
 The exit status is 0 if the database was successfully converted, and 1 if an error occurred.
 
-## Contributing
+## Contact
 
+**Found a bug or want a new feature?** Please create a ticket at https://sourceforge.net/p/locatejson/tickets
+
+**Need help developing a solution?** I may be available to offer consultancy - contact me via SourceForge at https://sourceforge.net/u/jmistry/profile/send_message
 
