@@ -10,5 +10,4 @@ include_directories("${CMAKE_BINARY_DIR}")
 
 file(GLOB_RECURSE src_files ${PROJECT_SOURCE_DIR}/src/*.cpp)
 add_executable(locatejson ${src_files})
-target_link_libraries(locatejson m)
 
