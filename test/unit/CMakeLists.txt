@@ -13,4 +13,4 @@ add_executable(locatejson_unit_testexe ${subject_src} ${test_src})
 
 target_link_libraries(locatejson_unit_testexe gtest gtest_main pthread)
 
-add_test(locatejson_unit_testexe ${PROJECT_SOURCE_DIR}/test/dynamic_analysis_wrapper.sh "${CMAKE_CURRENT_SOURCE_DIR}/locatejson_unit_testexe")
+add_test(locatejson_unit_testexe ${CMAKE_CURRENT_SOURCE_DIR}/locatejson_unit_testexe)
