@@ -11,3 +11,7 @@ install_manifest.txt
 .settings
 appConfig.h
 Testing
+*.deb
+*.rpm
+*.swp
+_CPack_Packages
