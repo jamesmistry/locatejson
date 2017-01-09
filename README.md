@@ -49,6 +49,7 @@ locateJson intentionally doesn't use much memory - the mlocate database and resu
 
 + C++11 compatible compiler (at least g++ 4.8.5 recommended)
 + cmake >= version 2.6
++ gtest development package (unit testing framework)
 + valgrind, for dynamic analysis tests
 + cppcheck, for static analysis tests
 
