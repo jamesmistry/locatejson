@@ -76,32 +76,23 @@ If you're using a DEB or RPM based platform, it's recommended you generate a com
 **To install from a package:**
 
 1. In the repository root, run one of the following commands depending on whether you want to generate an RPM or DEB package:
-
 ```bash
 cmake -DCMAKE_BUILD_TYPE=Release -DCPACK_GENERATOR=RPM ./
 ```
-
 or
-
 ```bash
 cmake -DCMAKE_BUILD_TYPE=Release -DCPACK_GENERATOR=DEB ./
 ```
-
 2. Run the following commands:
-
 ```bash
 make
 make package
 ```
-
 3. Install the package now present in the repository root, e.g.
-
 ```bash
 sudo yum install locatejson-0.1-1.x86_64.rpm 
 ```
-
 or
-
 ```bash
 sudo dpkg -i locatejson-0.1-1.x86_64.deb
 ```
