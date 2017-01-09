@@ -8,7 +8,7 @@ if [ -z "$1" ] ; then
 fi
 
 myDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-tmpOut="$(tempfile)"
+tmpOut="$(mktemp)"
 
 function dtor
 {
