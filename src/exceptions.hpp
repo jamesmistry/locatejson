@@ -19,7 +19,7 @@ namespace locj
 	class FileOpenError : public AppException
 	{
 	public:
-		FileOpenError(std::string filename) : AppException("Error opening file " + filename)
+		FileOpenError(std::string filename) : AppException("Error opening file " + filename + ". Check the file exists and you have permissions to read it")
 		{
 		}
 
