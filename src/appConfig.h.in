@@ -3,5 +3,6 @@
 
 #define APP_VERSION_MAJOR @app_VERSION_MAJOR@
 #define APP_VERSION_MINOR @app_VERSION_MINOR@
+#define APP_VERSION_REL   @app_VERSION_REL@
 
 #endif

@@ -21,7 +21,7 @@ static void parseArguments(int argc, char * argv[], locj::Config & config)
 {
 
 	std::stringstream versionStr;
-	versionStr << APP_VERSION_MAJOR << "." << APP_VERSION_MINOR;
+	versionStr << APP_VERSION_MAJOR << "." << APP_VERSION_MINOR << "." << APP_VERSION_REL;
 
 	TCLAP::CmdLine cmd("Convert an mlocate database to JSON.", ' ', versionStr.str());
 
