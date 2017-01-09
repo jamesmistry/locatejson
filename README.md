@@ -6,26 +6,110 @@ locateJson: a tool for converting mlocate databases to JSON.
 
 mlocate databases contain an index of files and directories for efficient lookup. `man locate` and `man mlocate.db` for more details.
 
-locateJson doesn't use much memory - the mlocate database and resulting JSON aren't buffered, so locateJson's memory usage is independent of how big they are.
+## TL; DR
 
-You may find locateJson useful for creating distributed `locate` functionality using a search engine like Elasticsearch - see the `examples/` directory for a basic guide.
+From the repository root:
+
+```bash
+cmake -DCMAKE_BUILD_TYPE=Release ./
+make
+make install
+ln -s /opt/locatejson/bin/locatejson /usr/bin/locatejson
+```
+
+Then (you may need to `sudo`):
+
+```bash
+locatejson -o /tmp/output.json
+```
+
+## Questions & Answers
+
++ What's this for?
+A component for any application that needs access to an index of files and directories on Linux in a modern, easily-parsable format.
+
++ How can I pretty-print locateJson's output?
+locateJson can't produce pretty-printed JSON itself, but you can use Python to do this:
+
+```bash
+python -m json.tool condensed.json > pretty.json
+```
+
++ How will locateJson handle massive databases and JSON outputs?
+The maximum file sizes supported by locateJson are limited only by your file system.
+
+locateJson intentionally doesn't use much memory - the mlocate database and resulting JSON aren't buffered, so locateJson's memory usage is low regardless of how big they are.
 
 ## Building & Testing
 
 ### What you need
 
++ C++11 compatible compiler (at least g++ 4.8.5 recommended)
++ cmake >= version 2.6
++ valgrind, for dynamic analysis tests
++ cppcheck, for static analysis tests
 
 ### Instructions
 
-## Installing
+From the repository root:
+
+```bash
+cmake -DCMAKE_BUILD_TYPE=Release ./
+make
+make test
+```
+
+## Packaging & Installing
 
 ### What you need
 
+If you're using a DEB or RPM based platform, it's recommended you generate a compatible package (see below for instructions) and install using this. To do this, you'll need package building tools such as:
 
++ rpm-build
++ builddeb
 
 ### Instructions
 
+**To install from a package:**
 
+1. In the repository root, run one of the following commands depending on whether you want to generate an RPM or DEB package:
+
+```bash
+cmake -DCMAKE_BUILD_TYPE=Release -DCPACK_GENERATOR=RPM ./
+```
+
+or
+
+```bash
+cmake -DCMAKE_BUILD_TYPE=Release -DCPACK_GENERATOR=DEB ./
+```
+
+2. Run the following commands:
+
+```bash
+make
+make package
+```
+
+3. Install the package now present in the repository root, e.g.
+
+```bash
+sudo yum install locatejson-0.1-1.x86_64.rpm 
+```
+
+or
+
+```bash
+sudo dpkg -i locatejson-0.1-1.x86_64.deb
+```
+
+**To install without generating a package:**
+
+```bash
+cmake -DCMAKE_BUILD_TYPE=Release ./
+make
+make install
+```
 
 ## Usage
 
@@ -50,5 +134,5 @@ The exit status is 0 if the database was successfully converted, and 1 if an err
 
 **Found a bug or want a new feature?** Please create a ticket at https://sourceforge.net/p/locatejson/tickets
 
-**Need help developing a solution?** I may be available to offer consultancy - contact me via SourceForge at https://sourceforge.net/u/jmistry/profile/send_message
+**Need help developing a solution?** I may be available to help - contact me via SourceForge at https://sourceforge.net/u/jmistry/profile/send_message
 
