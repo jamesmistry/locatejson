@@ -25,17 +25,20 @@ locatejson -o /tmp/output.json
 
 ## Questions & Answers
 
-+ What's this for?
+**What's this for?**
+
 A component for any application that needs access to an index of files and directories on Linux in a modern, easily-parsable format.
 
-+ How can I pretty-print locateJson's output?
+**How can I pretty-print locateJson's output?**
+
 locateJson can't produce pretty-printed JSON itself, but you can use Python to do this:
 
 ```bash
 python -m json.tool condensed.json > pretty.json
 ```
 
-+ How will locateJson handle massive databases and JSON outputs?
+**How will locateJson handle massive databases and JSON outputs?**
+
 The maximum file sizes supported by locateJson are limited only by your file system.
 
 locateJson intentionally doesn't use much memory - the mlocate database and resulting JSON aren't buffered, so locateJson's memory usage is low regardless of how big they are.
