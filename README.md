@@ -34,7 +34,7 @@ A component for any application that needs access to an index of files and direc
 locateJson can't produce pretty-printed JSON itself, but you can use Python to do this:
 
 ```bash
-python -m json.tool condensed.json > pretty.json
+python -m json.tool ugly.json > pretty.json
 ```
 
 **How will locateJson handle massive databases and JSON outputs?**
