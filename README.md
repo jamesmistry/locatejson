@@ -136,7 +136,9 @@ The exit status is 0 if the database was successfully converted, and 1 if an err
 
 ## Contact
 
-**Found a bug or want a new feature?** Please create a ticket at https://sourceforge.net/p/locatejson/tickets
+**Found a bug or want a new feature?** Please create a ticket at https://github.com/jamesmistry/locatejson/issues
 
-**Need help developing a solution?** I may be available to help - contact me via SourceForge at https://sourceforge.net/u/jmistry/profile/send_message
+**General comments or queries?** Reach me on Twitter (@j_s_e_m)
+
+**Need help developing a solution?** I may be available to help - drop me an email: hello [AT] jamesmistry.com
 
