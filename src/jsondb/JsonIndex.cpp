@@ -41,7 +41,14 @@ namespace locj
 
 	JsonIndex::~JsonIndex()
 	{
-		indexFooter();
+	    try
+	    {
+	        indexFooter();
+	    }
+	    catch (...)
+	    {
+	        return;
+	    }
 	}
 
 	void JsonIndex::indexHeader(const std::string & hostname)
