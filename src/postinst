@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ln -s /opt/locatejson/bin/locatejson /usr/bin/locatejson
+ln -fs /opt/locatejson/bin/locatejson /usr/bin/locatejson
