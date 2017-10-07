@@ -34,11 +34,11 @@
 namespace locj
 {
 
-	const std::size_t LocateDb::m_MLOCATE_DB_HDR_SIZE = 16;
+	const long int LocateDb::m_MLOCATE_DB_HDR_SIZE = 16;
 	const std::array<char, 8> LocateDb::m_MLOCATE_DB_MAGIC = std::array<char, 8>({ '\0', 'm', 'l', 'o', 'c', 'a', 't', 'e' });
 	const std::size_t LocateDb::m_MLOCATE_DIR_HDR_SIZE = 16;
 
-	LocateDb::LocateDb(std::string filename) : m_dbFilename(filename), m_dbFile(filename), m_dbFileSize(0)
+	LocateDb::LocateDb(std::string filename) : m_dbFile(filename), m_dbFilename(filename), m_dbFileSize(0)
 	{
 		if (m_dbFile.fail())
 		{

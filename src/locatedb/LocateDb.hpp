@@ -257,7 +257,7 @@ namespace locj
 		 *  - 1 byte require visibility flag..14
 		 *  - 2 byte padding..................16
 		 */
-		static const std::size_t m_MLOCATE_DB_HDR_SIZE;
+		static const long int m_MLOCATE_DB_HDR_SIZE;
 		static const std::array<char, 8> m_MLOCATE_DB_MAGIC; //!< The mlocate.db magic number
 		/*!
 		 * 16 bytes for the directory fixed header:
