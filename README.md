@@ -1,5 +1,7 @@
 # locateJson
 
+[![Build Status](https://travis-ci.org/jamesmistry/locatejson.svg?branch=master)](https://travis-ci.org/jamesmistry/locatejson)
+
 ## Overview
 
 locateJson: a tool for converting mlocate databases to JSON.
@@ -23,13 +25,7 @@ Then (you may need to `sudo`):
 locatejson -o /tmp/output.json
 ```
 
-## Questions & Answers
-
-**What's this for?**
-
-A component for any application that needs access to an index of files and directories on Linux in a modern, easily-parsable format.
-
-**How can I pretty-print locateJson's output?**
+## Pretty-printed JSON
 
 locateJson can't produce pretty-printed JSON itself, but you can use Python to do this:
 
@@ -37,7 +33,7 @@ locateJson can't produce pretty-printed JSON itself, but you can use Python to d
 python -m json.tool ugly.json > pretty.json
 ```
 
-**How will locateJson handle massive databases and JSON outputs?**
+## Handling Massive Databases
 
 The maximum file sizes supported by locateJson are limited only by your file system.
 
@@ -134,11 +130,4 @@ locatejson [-n <string>] [-o <filename>] [-i <filename>] [--] [--version] [-h]
 
 The exit status is 0 if the database was successfully converted, and 1 if an error occurred.
 
-## Contact
-
-**Found a bug or want a new feature?** Please create a ticket at https://github.com/jamesmistry/locatejson/issues
-
-**General comments or queries?** Reach me on Twitter (@j_s_e_m)
-
-**Need help developing a solution?** I may be available to help - drop me an email: hello [AT] jamesmistry.com
 
