@@ -25,6 +25,9 @@ namespace locj
 		EXPECT_THROW(
 				subject.load([](FileEntryType type, std::string root, std::string object)
 		        {
+		            (void)(type);
+		            (void)(root);
+		            (void)(object);
 		        }),
 		        TruncatedFileHeader);
 	}
@@ -38,6 +41,9 @@ namespace locj
 		EXPECT_THROW(
 				subject.load([](FileEntryType type, std::string root, std::string object)
 				{
+		            (void)(type);
+                    (void)(root);
+                    (void)(object);
 				}),
 				BadMagicNumber);
 	}
@@ -51,6 +57,9 @@ namespace locj
 		EXPECT_THROW(
 				subject.load([](FileEntryType type, std::string root, std::string object)
 				{
+                    (void)(type);
+                    (void)(root);
+                    (void)(object);
 				}),
 				InvalidConfigBlockSize);
 	}
@@ -64,6 +73,9 @@ namespace locj
 		EXPECT_THROW(
 				subject.load([](FileEntryType type, std::string root, std::string object)
 				{
+                    (void)(type);
+                    (void)(root);
+                    (void)(object);
 				}),
 				UnsupportedDatabaseVersion);
 	}
@@ -77,6 +89,9 @@ namespace locj
 		EXPECT_THROW(
 				subject.load([](FileEntryType type, std::string root, std::string object)
 				{
+                    (void)(type);
+                    (void)(root);
+                    (void)(object);
 				}),
 				TruncatedConfigBlock);
 	}
@@ -90,6 +105,9 @@ namespace locj
 		EXPECT_THROW(
 				subject.load([](FileEntryType type, std::string root, std::string object)
 				{
+                    (void)(type);
+                    (void)(root);
+                    (void)(object);
 				}),
 				TruncatedDbString);
 	}
@@ -103,6 +121,9 @@ namespace locj
 		EXPECT_THROW(
 				subject.load([](FileEntryType type, std::string root, std::string object)
 				{
+                    (void)(type);
+                    (void)(root);
+                    (void)(object);
 				}),
 				TruncatedDbString);
 	}
@@ -117,6 +138,9 @@ namespace locj
 		EXPECT_THROW(
 				subject.load([](FileEntryType type, std::string root, std::string object)
 				{
+                    (void)(type);
+                    (void)(root);
+                    (void)(object);
 				}),
 				TruncatedDirHdr);
 	}
@@ -132,6 +156,9 @@ namespace locj
 		EXPECT_THROW(
 				subject.load([](FileEntryType type, std::string root, std::string object)
 				{
+                    (void)(type);
+                    (void)(root);
+                    (void)(object);
 				}),
 				BadFileEntryType);
 	}
@@ -151,6 +178,9 @@ namespace locj
 		EXPECT_THROW(
 				subject.load([](FileEntryType type, std::string root, std::string object)
 				{
+                    (void)(type);
+                    (void)(root);
+                    (void)(object);
 				}),
 				OversizeDbString);
 	}
